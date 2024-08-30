@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title API Response
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body
+    h1 API Response
+    div(class="response-container")
+      p Original Link: 
+        a(href=link)= link
+      p New Link: 
+        a(href=`/${code}` target="_blank")= `/${code}`
+
+      a(href="/") Back to form

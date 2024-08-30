@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Link and Code Form
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body
+    h1 Shorten your url
+    h2 Want to send a link to someone but it is too long? Shorten it before sending
+    form(action="/api/links", method="post")
+      div
+        label(for="link") Link (required):
+        input(type="text", name="link", required)
+      div
+        label(for="code") Code:
+        input(type="text", name="code", maxlength="7", pattern="[A-Za-z0-9]{1,7}")
+        span.helper-text Maximum 7 characters, alphanumeric only.
+      div
+        button(type="submit") Submit

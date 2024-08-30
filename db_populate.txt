@@ -1,0 +1,27 @@
+-- Create the database
+CREATE DATABASE url_shortner;
+
+-- Create the user with the given username and password
+CREATE USER 'urlshortner'@'localhost' IDENTIFIED BY 'nodeurlshor';
+
+-- Grant all privileges on the url_shortner database to the user
+GRANT ALL PRIVILEGES ON url_shortner.* TO 'urlshortner'@'localhost';
+
+-- Apply the changes (flush privileges)
+FLUSH PRIVILEGES;
+
+-- Use the database
+USE url_shortner;
+
+-- Create the table
+CREATE TABLE urls (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    code VARCHAR(7) UNIQUE NOT NULL,
+    link TEXT NOT NULL
+);
+
+-- Insert test data into the table
+INSERT INTO urls (code, link) VALUES 
+('abc1234', 'https://example.com'),
+('def5678', 'https://another-example.com'),
+('ghi9012', 'https://yetanother-example.com');
